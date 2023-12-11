@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your HTML Page</title>
+
+  <style>
+    /* Include the CSS styles here */
+    .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh; /* Optional: Adjust the height if needed */
+    }
+
+    .container-with-margin {
+      margin-bottom: 16px; /* Adjust margin as needed */
+    }
+  </style>
+</head>
+<body>
+
+  <app-small-header [uName]="userName"></app-small-header>
+  <div class="toolbar" role="banner">
+    <ng-container *ngIf="(isAuthenticated$ | async) === false; else signout">
+      <button (click)="signIn()"> Sign in </button>
+    </ng-container>
+    
+    <ng-template #signout>
+      <div class="center-content container-with-margin">
+      <button mat-raised-button color="accent" (click)="signOut()">Click here to the dashboar</button>
+    </div>
+    </ng-template>
+  </div>
+  <router-outlet></router-outlet>
+  
+   
+  
+<mat-card>
+<mat-card-content>
+
+
+  <app-small-footer></app-small-footer>
+
+</mat-card-content>
+</mat-card>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Warwick Business School</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+
+    <span class="logout">
+        <span class="bell-icon">
+          <mat-icon>notifications_none</mat-icon>
+        </span>
+        <button mat-mini-fab matTooltip="'{{ uName }}'" [matMenuTriggerFor]="menu" [matTooltipPosition]="position.value" color="accent">
+            <mat-icon>perm_identity</mat-icon>
+          </button>
+          
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="signOut()">
+              <mat-icon>power_settings_new</mat-icon>
+              <span>Logout</span>
+            </button>
+        </mat-menu>
+      </span>
+  </mat-toolbar>
+  

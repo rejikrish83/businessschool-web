@@ -1,0 +1,84 @@
+
+<div class="profile-card">
+    <div class="shield"></div>
+    <p *ngIf="name$ | async as name">
+        Hello {{name}}! 
+    </p>
+    
+  </div>
+
+<mat-card>
+    <mat-card-content>
+  <div>
+  <div class="example-container">
+
+  <div>
+    <div class="example-label">Date: </div>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  </div>
+  
+  <mat-divider></mat-divider>
+  <div>
+    <div class="example-label">Module: </div>
+  <mat-form-field>
+    <mat-label>Select Module</mat-label>
+    <mat-select [(ngModel)]="selectedModule" (ngModelChange)="onModuleSelectionChange()">
+      <mat-option *ngFor="let module of modulesList; let i = index" [value]="module">{{module.moduleName}}</mat-option>
+    </mat-select>
+    <mat-hint align="end"></mat-hint>
+  </mat-form-field>
+</div>
+<mat-divider></mat-divider>
+
+  <div>
+    <div class="example-label" >Kpi Type: </div>
+    <mat-form-field *ngIf="kpiDataTypes.length > 0">
+      <mat-label>Select me</mat-label>
+      <mat-select [(ngModel)]="selectedKpiDataType">
+        <mat-option *ngFor="let kpiDataType of kpiDataTypes" [value]="kpiDataType">{{kpiDataType}}</mat-option>
+      </mat-select>
+      <mat-hint align="end"></mat-hint>
+    </mat-form-field>
+  </div>
+  </div>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="getKpiData()">View Report</button>
+    <button mat-raised-button color="primary" (click)="onClick()">Reset</button>
+  </div>
+
+</mat-card-content>
+</mat-card>
+
+
+<mat-card> 
+<mat-card-content>
+  
+  <div class="spinner-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Displayed Columns -->
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element[column] }} </td>
+    </ng-container>
+  
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
+    <!-- Data Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</mat-card-content>
+</mat-card>
+

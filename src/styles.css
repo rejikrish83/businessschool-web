@@ -1,0 +1,55 @@
+/* Include Angular Material core styles */
+/* Note: The Sass @use and @include statements are removed, as they are Sass-specific */
+/* Import the necessary Material Design palettes and define the light theme */
+/* Note: Variables like $theme-primary are replaced with their actual color values */
+
+
+
+/* Use the custom primary color in your styles */
+.button-with-custom-color {
+  background-color: var(--custom-primary);
+  color: white;
+  /* Add any other styles as needed */
+}
+
+
+/* Define theme colors */
+:root {
+  --custom-primary: #2196F3;
+  --theme-primary: #201dbe;
+  --theme-accent: #9e1945;
+  --theme-warn: #f44336;
+}
+
+.button-with-custom-color {
+  background-color: var(--custom-primary);
+  color: white;
+  /* Add any other styles as needed */
+}
+
+/* Define light theme */
+/* Note: Sass-specific functions like mat.define-light-theme are removed */
+/* Replace with direct CSS styling */
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 30px;
+  background-color: var(--indigo-palette);
+  color: var(--pink-palette);
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Apply theme colors to components */
+/* Note: Sass-specific functions like mat.all-component-themes are removed */
+/* Replace with direct CSS styling if necessary */
+/* For Angular Material components, the :root variables are typically used in the component styles */
+/* Example: background-color: var(--theme-primary); */
+
+.container-with-margin {
+  margin-bottom: 16px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

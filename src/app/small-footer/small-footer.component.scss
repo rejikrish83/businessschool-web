@@ -1,0 +1,18 @@
+ 
+  /* Add this to your styles.css or styles.scss */
+.copyright-text {
+    font-size: 13px; /* Adjust the font size as needed */
+    color: white; /* Change the text color as needed */
+    /* Add any other styles as needed */
+  }
+  
+  /* If using SCSS, you can nest the styles like this: */
+  mat-toolbar {
+    .copyright-text {
+      font-size: 13px;
+      color: white;
+      
+      /* Add any other styles as needed */
+    }
+  }
+  

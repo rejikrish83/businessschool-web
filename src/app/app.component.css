@@ -1,0 +1,44 @@
+.required::before {
+  content: " *";
+  color: red;
+}
+
+  
+  .example-container mat-form-field + mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-button-row {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+  }
+  
+  /* Optional: Adjust individual button styles */
+  button {
+    margin-right: 0;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  
+  .example-disabled {
+    display: inline-block;
+  }
+  /* Your component styles */
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  
