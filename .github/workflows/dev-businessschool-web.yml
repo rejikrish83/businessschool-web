@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
+          
+      - name: Set Execute Permissions
+        run: chmod +x generate-environment-file.sh
 
       - name: Generate Environment File
         run: ./generate-environment-file.sh "${{ secrets.API_URL }}" "${{ secrets.OKTA_DOMAIN }}" "${{ secrets.CLIENT_ID }}"
