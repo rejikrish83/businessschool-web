@@ -44,13 +44,6 @@ jobs:
       - name: Generate Environment File
         run: ./generate-environment-file.sh "${{ secrets.API_URL }}" "${{ secrets.OKTA_DOMAIN }}" "${{ secrets.CLIENT_ID }}"
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Angular App
-        run: npm run build
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v1
 
       - name: Build and Push Docker Image
         env:
