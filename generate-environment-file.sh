@@ -14,4 +14,3 @@ export const environment = {
   ClientID: '${CLIENT_ID}',
 };
 EOL
-chmod +x generate-environment-file.sh
