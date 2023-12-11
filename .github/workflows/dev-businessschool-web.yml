@@ -60,7 +60,8 @@ jobs:
             --platform linux/amd64,linux/arm64 \
             -t ${{ secrets.DOCKERHUB_USERNAME }}/businessschool-web:latest \
             -f Dockerfile \
-            .
+            . \
+            --push
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/businessschool-web:latest ${{ secrets.DOCKERHUB_USERNAME }}/businessschool-web:latest
           echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/businessschool-web:latest
